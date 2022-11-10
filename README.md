@@ -1,1 +1,1 @@
-# freezy-portfolio
+# freezy-llc
