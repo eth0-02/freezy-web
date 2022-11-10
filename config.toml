@@ -1,6 +1,6 @@
 # General Settings
 title = "Aster - Creative Agency Portfolio Hugo Theme"
-baseURL = "freezysite.netlify.app"
+baseURL = "https://freezysite.netlify.app"
 languageCode = "en-us"
 theme = "freezy-002"
 resourceDir = "resources"
