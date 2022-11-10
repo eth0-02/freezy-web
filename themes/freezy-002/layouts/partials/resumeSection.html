@@ -1,0 +1,123 @@
+{{ with .Site.Data.home.resume }}
+{{ if .enable }}
+<section class="section section-parallax-2" id="resume-section">
+  <div class="container">
+
+    {{ "<!-- heading -->" | safeHTML }}
+    <div class="m-titles">
+      <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
+        {{ .title }}
+      </h2>
+    </div>
+
+    <div class="row row-custom">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 vertical-line">
+
+        {{ "<!-- description -->" | safeHTML }}
+        <div class="text scrolla-element-anim-1 scroll-animate" data-animate="active">
+          {{ .text | safeHTML }}
+        </div>
+
+        {{ if .skills.enable }}
+        {{ "<!-- skills -->" | safeHTML }}
+        <div class="skills-items">
+          <div class="p-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .skills.title }}</div>
+          {{ range .skills.items }}
+          <div class="skills-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <div class="name">{{ .label }}</div>
+            <div class="dots dots-{{ .dots }}0">
+              <div class="dots-row">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+              </div>
+            </div>
+            <div class="value"><span class="num">{{ .value }}%</span></div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .services.enable }}
+        {{ "<!-- services -->" | safeHTML }}
+        <div class="p-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .services.title }}</div>
+        <div class="services-items">
+          {{ range .services.items }}
+          <div class="services-col">
+            <div class="services-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="icon">
+                <i aria-hidden="true" class="{{ .icon }}"></i>
+              </div>
+              <div class="title">{{ .name }}</div>
+              <div class="text">
+                {{ .text | safeHTML }}
+              </div>
+              <a href="{{ .link }}" class="lnk">{{ .button }}</a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ "<!-- history -->" | safeHTML }}
+        <div class="history-left">
+          {{ range .history1 }}
+          <div class="history-items">
+            <div class="p-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</div>
+            {{ range .items }}
+            <div class="history-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="date">{{ .date }}</div>
+              <div class="name">{{ .name }}</div>
+              {{ with .subname }}
+              <div class="subname">{{ . }}</div>
+              {{ end }}
+              {{ with .text }}
+              <div class="text">{{ . | safeHTML }}</div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+
+        <div class="history-right">
+          {{ range .history2 }}
+          <div class="history-items">
+            <div class="p-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</div>
+            {{ range .items }}
+            <div class="history-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="date">{{ .date }}</div>
+              <div class="name">{{ .name }}</div>
+              {{ with .subname }}
+              <div class="subname">{{ . }}</div>
+              {{ end }}
+              {{ with .text }}
+              <div class="text">{{ . | safeHTML }}</div>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+
+        <div class="clear"></div>
+
+        {{ "<!-- button -->" | safeHTML }}
+        <a target="_blank" href="{{ .button.link }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .button.text }}</a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}
+{{ end }}

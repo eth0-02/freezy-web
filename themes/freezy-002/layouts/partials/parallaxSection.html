@@ -1,0 +1,18 @@
+{{ $parallaxImage := .Params.parallaxImage }}
+
+{{ with .Site.Data.about.parallax }}
+{{ if .enable }}
+
+{{ "<!-- Section Image Large -->" | safeHTML }}
+<div class="section section-inner m-image-large scrolla-element-anim-1 scroll-animate" data-animate="active">
+  <div class="image">
+    {{ if $parallaxImage }}
+    <div class="img js-parallax" style="background-image: url({{ $parallaxImage | absURL }});"></div>
+    {{ else }}
+    <div class="img js-parallax" style="background-image: url({{ .image | absURL }});"></div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

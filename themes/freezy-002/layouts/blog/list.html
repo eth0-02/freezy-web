@@ -1,0 +1,65 @@
+{{ define "main" }}
+{{ $dateFormat := .Site.Params.dateFormat }}
+
+{{ "<!-- heading -->" | safeHTML }}
+<div class="section section-inner started-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="h-titles">
+          <div class="h-subtitle red splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">{{ .Params.subtitle }}</div>
+          <div class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">{{ .Title }}</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Archive -->
+<div class="section section-inner m-archive">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+
+        <!-- archive items -->
+        <div class="archive-items">
+
+          {{ range .Paginator.Pages }}
+          <div class="archive-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <div class="image">
+              <a href="{{ .Permalink }}">
+                <img src="{{ .Params.featureImage | absURL }}" alt="{{ .Title }}" />
+              </a>
+            </div>
+            <div class="desc">
+              <div class="category">{{ with .Params.categories }}{{ delimit . " / "}}{{ end }} <span>/ {{ .PublishDate.Format $dateFormat }}</span></div>
+              <div class="title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </div>
+              <div class="text">
+                {{ .Summary }} &#8230;
+              </div>
+              <div class="readmore">
+                <a href="{{ .Permalink }}" class="btn-link">{{ i18n "readMore" }}</a>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+
+        {{ partial "pagination" . }}
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+
+        {{ partial "sidebar" . }}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

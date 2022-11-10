@@ -1,0 +1,46 @@
+<head>
+  <title>{{ .Title }}</title>
+
+  {{ "<!-- Meta -->" | safeHTML }}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="bslthemes" />
+
+  {{ "<!-- Google Fonts -->" | safeHTML }}
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i%2C900%2C900i%7CPlayfair+Display%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i%2C900%2C900i%7CMr+De+Haviland&#038;display=swap" type="text/css" media="all" />
+
+  {{ "<!-- Plugins Stylesheets -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "plugins/bootstrap/bootstrap.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/font-awesome/css/font-awesome.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/magnific-popup/magnific-popup.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/splitting/splitting.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/swiper/swiper.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/animate/animate.css" | absURL }}" />
+
+  {{ "<!-- Main Stylesheets -->" | safeHTML }}
+  {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  {{ "<!-- Favicon -->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon" />
+  <link rel="icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon" />
+
+  {{ with site.Params.googleAnalytics }}
+  {{ "<!-- Google Analytics -->" | safeHTML }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
+
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+</head>

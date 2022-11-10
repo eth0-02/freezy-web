@@ -1,0 +1,168 @@
+{{ define "main" }}
+
+{{ "<!-- heading -->" | safeHTML }}
+<div class="section section-inner started-heading">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="h-titles">
+					<div class="h-subtitle red splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">{{ .Params.category }}</div>
+					<div class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">{{ .Title }}</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ with .Params.full_image }}
+{{ "<!-- Image Large -->" | safeHTML }}
+<div class="section section-inner m-image-large scrolla-element-anim-1 scroll-animate" data-animate="active">
+	<div class="image">
+		<div class="img js-parallax" style="background-image: url({{ . | absURL }});"></div>
+	</div>
+</div>
+{{ end }}
+
+{{ "<!-- Details -->" | safeHTML }}
+<div class="section section-inner m-details">
+	<div class="container">
+		<div class="details-box">
+			<div class="row">
+				{{ range .Params.info }}
+				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+					<div class="details-label">
+						<strong>{{ .label }}</strong> {{ .value }}
+					</div>
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ with .Params.description1 }}
+{{ if .enable }}
+
+{{ "<!-- Description -->" | safeHTML }}
+<div class="section section-inner m-description">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 align-left col-lg-12">
+				<div class="m-titles">
+					<div class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="description-text scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ .text | safeHTML }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ end }}
+{{ end }}
+
+{{ with .Params.gallery }}
+{{ if .enable }}
+
+{{ "<!-- Gallery -->" | safeHTML }}
+<div class="section section-inner m-gallery">
+	<div class="container">
+		<div class="row">
+			{{ range .images }}
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="works-item">
+					<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
+						<div class="img">
+							<a href="{{ . | absURL }}" class="has-popup-image">
+								<img src="{{ . | absURL }}" alt="Image" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</div>
+
+{{ end }}
+{{ end }}
+
+{{ with .Params.description2 }}
+{{ if .enable }}
+
+{{ "<!-- Description -->" | safeHTML }}
+<div class="section section-inner m-description">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 align-left col-lg-12">
+				<div class="m-titles">
+					<div class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="description-text scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ .text | safeHTML }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ end }}
+{{ end }}
+
+{{ with .Params.carousel }}
+{{ if .enable }}
+
+{{ "<!-- Gallery Carousel -->" | safeHTML }}
+<div class="section section-inner m-gallery-carousel scrolla-element-anim-1 scroll-animate" data-animate="active">
+	<div class="container">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{{ range .images }}
+				<div class="swiper-slide">
+					<img src="{{ . | absURL }}" alt="Image" />
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ end }}
+{{ end }}
+
+{{ if or .NextInSection .PrevInSection }}
+
+{{ "<!-- Navigation -->" | safeHTML }}
+<div class="section section-inner m-page-navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-2">
+				<div class="h-titles h-navs">
+					{{ if .NextInSection }}
+					<a href="{{ .NextInSection.Permalink }}">
+						<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">{{ i18n "nextProject" }}</span>
+						<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">{{ .NextInSection.Title }}</span>
+					</a>
+					{{ else }}
+					<a href="{{ .PrevInSection.Permalink }}">
+						<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">{{ i18n "prevProject" }}</span>
+						<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">{{ .PrevInSection.Title }}</span>
+					</a>
+					{{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ end }}
+
+{{ end }}

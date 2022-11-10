@@ -1,0 +1,57 @@
+{{ with .Site.Data.about.team }}
+{{ if .enable }}
+
+<!-- Section Team -->
+<div class="section section-inner m-team">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 align-left col-lg-12">
+
+        <div class="m-titles">
+          <h2 class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title | safeHTML }}</h2>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="team-items row">
+          {{ range .items }}
+          <div class="team-col col-xs-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="team-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="image">
+                <div class="img">
+                  <img src="{{ .image | absURL }}" alt="{{ .name }}" />
+                </div>
+              </div>
+              <div class="desc">
+                <div class="category">{{ .name }}</div>
+                <div class="name">{{ .subname }}</div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section section-inner section-description scrolla-element-anim-1 scroll-animate" data-animate="active">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1></h1>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        {{ .column1 | safeHTML }}
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        {{ .column2 | safeHTML }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

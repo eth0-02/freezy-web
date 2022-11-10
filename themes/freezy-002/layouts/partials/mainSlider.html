@@ -1,0 +1,50 @@
+{{ with .Site.Data.home.main_slider }}
+{{ if .enable }}
+
+{{ "<!-- Hero Main Slider -->" | safeHTML }}
+<div class="section hero-main-slider">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {{ range .slides }}
+      <div class="swiper-slide">
+
+        <div class="slide" style="background-image: url({{ .image | absURL }});"></div>
+
+        <div class="slide-titles">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+              <div class="titles dark">
+                <div class="label scrolla-element-anim-1">{{ .subtitle }}</div>
+                <div class="title">
+                  <span class="title-inner splitting-text-anim-2" data-splitting>{{ .title | safeHTML }}</span>
+                </div>
+                <div class="subtitle scrolla-element-anim-1">
+                  {{ .description | safeHTML }}
+                </div>
+              </div>
+
+              <div class="more-bts">
+                <a href="{{ .link }}" data-splitting class="btn more-btn scrolla-element-anim-1">{{ i18n "seeDetails" }}</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="swiper-pagination scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+
+    <div class="swiper-buttons">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

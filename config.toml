@@ -1,0 +1,128 @@
+# General Settings
+title = "Aster - Creative Agency Portfolio Hugo Theme"
+baseURL = "https://bslthemes.com/" #YOUR SITE URL
+languageCode = "en-us"
+theme = "freezy-002"
+resourceDir = "resources"
+paginate = 4
+summaryLength = 20
+DefaultContentLanguage = "en"
+
+# Menu Settings
+[menu]
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/home/"
+  weight = 1
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 2
+[[menu.main]]
+  identifier = "works"
+  name = "Works"
+  url = "/portfolio/"
+  weight = 3
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 4
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 5
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 6
+
+# Main Settings
+[params]
+dateFormat = "January 2, 2006"
+authorName = "Federico Ober"
+disqusComments = "test" #YOUR DISQUS COMMENTS SHORTNAME
+formspreeURL = "" #YOUR FORMSPREE URL
+googleAnalytics = "" #YOUR GOOGLE ANALYTICS CODE
+
+# Preloader Settings
+[params.preloader]
+logo = "images/logo.png"
+
+# Header Settings
+[params.header]
+logo = "images/logo.png"
+
+# Footer Settings
+[params.footer]
+copyright = "Copyright © 2022 Aster"
+col1_title = "Address:"
+col1_text = "Westlands Area,<br/>NBO 43014, KEN"
+col2_title = "Follow Us:"
+col2_text = ""
+col3_title = "Get in touch:"
+col3_text = "freezyllc@dev.com<br/>+012 (234) 567 78"
+
+# Social Settings
+[[params.social]]
+title = "Instagram"
+icon = "fab fa-twitter"
+url = "https://www.twitter.com/"
+weight = 1
+[[params.social]]
+title = "Twitter"
+icon = "fab fa-twitter"
+url = "https://www.twitter.com/"
+weight = 1
+[[params.social]]
+title = "Dribbble"
+icon = "fab fa-dribbble"
+url = "https://www.dribbble.com/"
+weight = 2
+[[params.social]]
+title = "Behance"
+icon = "fab fa-behance"
+url = "https://www.behance.net/"
+weight = 3
+
+# Sidebar
+[params.sidebar]
+enable = 1 #SIDEBAR SHOW: [ 1 - yes, 0 - no ]
+search = 1 #SIDEBAR SEARCH WIDGET: [ 1 - yes, 0 - no ]
+latestPosts = 1 #SIDEBAR LATEST POSTS WIDGET: [ 1 - yes, 0 - no ]
+categories = 1 #SIDEBAR CATEGORIES TAXONOMY WIDGET: [ 1 - yes, 0 - no ]
+tags = 1 #SIDEBAR TAG TAXONOMY WIDGET: [ 1 - yes, 0 - no ]
+
+# Portfolio Settings
+[params.portfolio]
+homeNumOfItems = 12
+[[params.portfolio.filters]]
+name = "UI UX Design"
+slug = "ui-ux-design"
+[[params.portfolio.filters]]
+name = "Photography"
+slug = "photography"
+[[params.portfolio.filters]]
+name = "Development"
+slug = "development"
+[[params.portfolio.filters]]
+name = "Branding"
+slug = "branding"
+
+# Sitemap Settings
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,56 @@
+{{ $sidebar := .Site.Params.sidebar }}
+
+<div class="col__sedebar scrolla-element-anim-1 scroll-animate" data-animate="active">
+  <div class="content-sidebar">
+    <aside class="widget-area">
+
+      {{ if $sidebar.search }}
+      <section class="widget widget_search">
+        <h2 class="widget-title">{{ i18n "search" }}</h2>
+        <form class="search-form" action="{{ "search" | absURL }}">
+          <label>
+            <span class="screen-reader-text">{{ i18n "searchFor" }}</span>
+            <input type="search" id="searchInput" class="search-field" placeholder="{{ i18n "search" }}" value="" />
+          </label>
+          <input type="submit" class="search-submit" value="{{ i18n "search" }}" />
+        </form>
+        <ul id="searchResults"></ul>
+      </section>
+      {{ end }}
+
+      {{ if $sidebar.categories }}
+      <section class="widget widget_categories">
+        <h2 class="widget-title">Categories</h2>
+        <ul>
+          {{ range .Site.Taxonomies.categories }}
+          <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+
+      {{ if $sidebar.latestPosts }}
+      <section class="widget widget_recent_entries">
+        <h2 class="widget-title">{{ i18n "latestPosts" }}</h2>
+        <ul>
+          {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+      {{ end }}
+
+      {{ if $sidebar.tags }}
+      <section class="widget widget_tag_cloud">
+        <h2 class="widget-title">{{ i18n "tags" }}</h2>
+        <div class="tagcloud">
+          {{ range .Site.Taxonomies.tags }}
+          <a href="{{ .Page.Permalink }}" class="tag-cloud-link">{{ .Page.Title }}</a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+    </aside>
+  </div>
+</div>

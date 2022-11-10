@@ -1,0 +1,48 @@
+{{ with .Site.Data.about.testimonial }}
+{{ if .enable }}
+
+{{ "<!-- Section Testimonials -->" | safeHTML }}
+<div class="section section-inner m-testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 align-left col-lg-12">
+
+        <div class="m-titles">
+          <h2 class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</h2>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="swiper-container js-testimonials">
+          <div class="swiper-wrapper">
+
+            {{ range .items }}
+            <div class="testimonials-item swiper-slide">
+              <div class="scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <div class="image">
+                  <img src="{{ .image | absURL }}" alt="{{ .name }}" />
+                </div>
+                <div class="desc">
+                  <div class="title">{{ .name }}</div>
+                  <div class="name">{{ .subname }}</div>
+                  <div class="text">
+                    {{ .text | safeHTML }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

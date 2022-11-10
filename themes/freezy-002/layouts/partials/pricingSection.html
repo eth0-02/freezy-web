@@ -1,0 +1,50 @@
+{{ with .Site.Data.home.pricing }}
+{{ if .enable }}
+<section class="section" id="pricing-section">
+  <div class="container">
+
+    {{ "<!-- heading -->" | safeHTML }}
+    <div class="m-titles">
+      <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
+        {{ .title }}
+      </h2>
+    </div>
+
+    <div class="row row-custom">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 vertical-line">
+
+        {{ "<!-- description -->" | safeHTML }}
+        <div class="text scrolla-element-anim-1 scroll-animate" data-animate="active">
+          {{ .text }}
+        </div>
+
+      </div>
+    </div>
+
+    {{ "<!-- pricing table -->" | safeHTML }}
+    <div class="pricing-items row">
+      {{ range .items }}
+      <div class="pricing-col col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="pricing-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+          <div class="title">{{ .name }}</div>
+          <div class="subtitle">{{ .subname }}</div>
+          <div class="price">{{ .price }}</div>
+          <div class="text">
+            <ul>
+              {{ range .list }}
+              <li>{{ .value }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          <a href="{{ .link }}" class="btn">{{ .button }}</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
+{{ end }}

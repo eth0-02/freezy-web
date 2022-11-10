@@ -1,0 +1,121 @@
+# Sections content configuration file
+##
+### use navigation.yml file to re-order, delete or add section of each card
+### here you can find all content in all pre-build sections
+
+### Main Slider [ mainSlider ]
+main_slider:
+  enable: true
+  slides:
+    - title: "Melanin <br>Goddess"
+      subtitle: "branding"
+      description: "
+        Creativity is to discover a question that has never been asked. If one brings up an idiosyncratic question, the answer he gives will necessarily be unique as well.
+      "
+      link: "/portfolio/melanin-goddess/"
+      image: "images/started-n26-1920x1080.jpg"
+
+    - title: "Blue denim"
+      subtitle: "ui/ux"
+      description: "
+        Creativity is to discover a question that has never been asked. If one brings up an idiosyncratic question, the answer he gives will necessarily be unique as well.
+      "
+      link: "/portfolio/blue-denim/"
+      image: "images/started-n15-1920x1080.jpg"
+
+    - title: "The Dance"
+      subtitle: "art"
+      description: "
+        Creativity is to discover a question that has never been asked. If one brings up an idiosyncratic question, the answer he gives will necessarily be unique as well.
+      "
+      link: "/portfolio/the-dance/"
+      image: "images/started-n15-1920x1080.jpg"
+
+### Grid Slider [ gridSlider ]
+grid_slider:
+  enable: true
+  slides:
+    - title: "Astronaut"
+      subtitle: "photo"
+      link: "/portfolio/astronaut/"
+      image: "images/started-n12-900x1170.jpg"
+
+    - title: "The Dance"
+      subtitle: "ui/ux"
+      link: "/portfolio/the-dance/"
+      image: "images/started-n2_4-900x600.jpg"
+
+    - title: "Blue denim"
+      subtitle: "branding"
+      link: "/portfolio/blue-denim/"
+      image: "images/started-n15-900x600.jpg"
+
+    - title: "Melanin Goddess"
+      subtitle: "photography"
+      link: "/portfolio/melanin-goddess/"
+      image: "images/started-n19-900x900.jpg"
+
+    - title: "Negative space"
+      subtitle: "art"
+      link: "/portfolio/negative-space/"
+      image: "images/started-n14_1-900x1080.jpg"
+
+### Half Slider [ halfSlider ]
+half_slider:
+  enable: true
+  slides:
+    - title: "Melanin <br>Goddess"
+      subtitle: "branding"
+      description: "
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+      "
+      link: "/portfolio/melanin-goddess/"
+      image: "images/started-n19-1080x1080.jpg"
+
+    - title: "Astronaut"
+      subtitle: "photo"
+      description: "
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+      "
+      link: "/portfolio/astronaut/"
+      image: "images/started-n12-1000x1080.jpg"
+
+    - title: "The Dance"
+      subtitle: "art"
+      description: "
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+      "
+      link: "/portfolio/the-dance/"
+      image: "images/started-n2_4-1080x1080.jpg"
+
+    - title: "Blue denim"
+      subtitle: "branding"
+      description: "
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+      "
+      link: "/portfolio/blue-denim/"
+      image: "images/started-n15-1080x1080.jpg"
+
+### Disp Slider [ dispSlider ]
+disp_slider:
+  enable: true
+  slides:
+    - title: "Astronaut"
+      subtitle: "photo"
+      link: "/portfolio/astronaut/"
+      image: "images/started_new-1920x1080.jpg"
+
+    - title: "The Dance"
+      subtitle: "art"
+      link: "/portfolio/the-dance/"
+      image: "images/started-n2_4-1920x1080.jpg"
+
+    - title: "Melanin <br>Goddess"
+      subtitle: "branding"
+      link: "/portfolio/melanin-goddess/"
+      image: "images/started-n26-1920x1080.jpg"
+
+    - title: "Blue denim"
+      subtitle: "branding"
+      link: "/portfolio/blue-denim/"
+      image: "images/started-n15-1920x1080.jpg"

@@ -1,0 +1,40 @@
+<script src="{{ "plugins/jQuery/jquery.min.js" | absURL }}"></script>
+<script src="{{ "plugins/bootstrap/bootstrap.js" | absURL }}"></script>
+<script src="{{ "plugins/swiper/swiper.js" | absURL }}"></script>
+<script src="{{ "plugins/splitting/splitting.min.js" | absURL }}"></script>
+<script src="{{ "plugins/TweenMax/TweenMax.min.js" | absURL }}"></script>
+<script src="{{ "plugins/pixi/pixi.min.js" | absURL }}"></script>
+<script src="{{ "plugins/jarallax/jarallax.min.js" | absURL }}"></script>
+<script src="{{ "plugins/magnific-popup/magnific-popup.js" | absURL }}"></script>
+<script src="{{ "plugins/imagesloaded/imagesloaded.pkgd.js" | absURL }}"></script>
+<script src="{{ "plugins/isotope/isotope.pkgd.js" | absURL }}"></script>
+<script src="{{ "plugins/scrolla/jquery.scrolla.js" | absURL }}"></script>
+<script src="{{ "plugins/skrollr/skrollr.js" | absURL }}"></script>
+<script src="{{ "plugins/validate/jquery.validate.min.js" | absURL }}"></script>
+
+{{ if .Site.Params.sidebar.search }}
+<script src="{{ "plugins/mark/mark.js" | absURL }}"></script>
+<script src="{{ "plugins/fuse/fuse.js" | absURL }}"></script>
+<script src="{{ "plugins/search/simple-search.js" | absURL }}"></script>
+{{ end }}
+
+{{ $formhandler := resources.Get "js/form-handler.js" | minify }}
+<script src="{{ $formhandler.Permalink }}"></script>
+
+{{ $scriptMainSlider := resources.Get "js/main-slider.js" | minify }}
+<script src="{{ $scriptMainSlider.Permalink }}"></script>
+
+{{ $scriptFullSlider := resources.Get "js/full-slider.js" | minify }}
+<script src="{{ $scriptFullSlider.Permalink }}"></script>
+
+{{ $scriptHalfSlider := resources.Get "js/half-slider.js" | minify }}
+<script src="{{ $scriptHalfSlider.Permalink }}"></script>
+
+{{ $scriptExSlider := resources.Get "js/ex-slider.js" | minify }}
+<script src="{{ $scriptExSlider.Permalink }}"></script>
+
+{{ $scriptHero := resources.Get "js/hero-started.js" | minify }}
+<script src="{{ $scriptHero.Permalink }}"></script>
+
+{{ $script := resources.Get "js/common.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>

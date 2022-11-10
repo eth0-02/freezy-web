@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<div class="section section-inner started-heading">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="m-titles">
+					<div class="m-title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
+						{{ .Title }}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section section-inner m-archive">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
+
+				<div class="post-content">
+					{{ .Content }}
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{{ end }}

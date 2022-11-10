@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+{{ partial "head.html" . }}
+
+<body class="page{{ if .IsHome }} home{{ end }}{{ if eq .Site.Params.defaultSkin "light" }} light-skin{{ end }}">
+  <div class="container-page ">
+    {{ "<!-- Preloader -->" | safeHTML }}
+    {{ partial "preloader.html" . }}
+
+    {{ "<!-- Header -->" | safeHTML }}
+    {{ partial "header.html" . }}
+
+    {{ "<!-- Wrapper -->" | safeHTML }}
+		<div class="wrapper{{ if .IsPage }}{{ if or ( eq .Type "blog" ) ( eq .Type "page" ) }} single-post{{ end }}{{ end }}{{ if .IsPage }}{{ if eq .Type "portfolio" }} project-single{{ end }}{{ end }}" id="content">
+      {{ block "main" . }}{{ end }}
+    </div>
+
+    {{ "<!-- Footer -->" | safeHTML }}
+    {{ partial "footer.html" . }}
+  </div>
+
+  {{ "<!-- Cursor -->" | safeHTML }}
+	<div class="cursor"></div>
+
+  {{ "<!-- Scripts -->" | safeHTML }}
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

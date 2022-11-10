@@ -1,0 +1,31 @@
+{{ with .Site.Data.about.clients }}
+{{ if .enable }}
+
+{{ "<!-- Section Partners -->" | safeHTML }}
+<div class="section section-inner m-partners">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <!-- partners -->
+        <div class="partners-box">
+          <div class="partners-items row">
+            {{ range .items }}
+            <div class="partners-col col-xs-12 col-sm-6 col-md-3 col-lg-3 scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <div class="partners-item">
+                <div class="image">
+                  <a target="_blank" href="{{ .link }}"><img src="{{ .image | absURL }}" alt="{{ .title }}" /></a>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

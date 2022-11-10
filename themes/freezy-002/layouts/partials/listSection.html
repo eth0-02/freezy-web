@@ -1,0 +1,34 @@
+{{ with .Site.Data.about.list }}
+{{ if .enable }}
+
+<!-- Section Description -->
+<div class="section section-inner m-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 align-left col-lg-12">
+        <div class="m-titles">
+          <div class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="description-list-items">
+
+          {{ range .items }}
+          <div class="description-list-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <div class="desc">
+              <div class="name">
+                <span class="number">{{ .num }}</span>
+                {{ .text | safeHTML }}
+              </div>
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

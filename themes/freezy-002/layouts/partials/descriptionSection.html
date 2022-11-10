@@ -1,0 +1,21 @@
+{{ with .Site.Data.about.description }}
+{{ if .enable }}
+
+<div class="section section-inner section-description scrolla-element-anim-1 scroll-animate" data-animate="active">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>{{ .title | safeHTML }}</h1>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        {{ .column1 | safeHTML }}
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        {{ .column2 | safeHTML }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

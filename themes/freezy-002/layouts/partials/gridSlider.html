@@ -1,0 +1,31 @@
+{{ with .Site.Data.home.grid_slider }}
+{{ if .enable }}
+
+{{ "<!-- Grid Slider -->" | safeHTML }}
+<div class="section m-works-carousel default">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {{ range .slides }}
+      <div class="swiper-slide">
+        <div class="works-slide">
+          <a href="work-single.html">
+            <span class="image">
+              <span class="img">
+                <span class="slide" style="background-image: url({{ .image | absURL }});"></span>
+              </span>
+            </span>
+            <span class="desc">
+              <span class="subname splitting-text-anim-1" data-splitting="chars">{{ .subtitle }}</span>
+              <span class="name splitting-text-anim-1" data-splitting="chars">{{ .title }}</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

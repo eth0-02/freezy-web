@@ -1,0 +1,49 @@
+{{ with .Site.Data.home.about }}
+{{ if .enable }}
+<section class="section section-bg section-parallax-1" id="about-section">
+  <div class="container">
+
+    {{ "<!-- heading -->" | safeHTML }}
+    <div class="m-titles">
+      <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
+        {{ .title }}
+      </h2>
+    </div>
+
+    <div class="row row-custom">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 align-right">
+
+        {{ "<!-- numbers -->" | safeHTML }}
+        <div class="numbers-items">
+          {{ range .list }}
+          <div class="numbers-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+            <div class="icon">
+              <i aria-hidden="true" class="{{ .icon }}"></i>
+            </div>
+            <div class="num">{{ .num }}</div>
+            <div class="title">{{ .label | safeHTML }}</div>
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 vertical-line">
+
+        {{ "<!-- profile -->" | safeHTML }}
+        <div class="profile-box">
+          <div class="text scrolla-element-anim-1 scroll-animate" data-animate="active">
+            {{ .text | safeHTML }}
+            <a href="{{ .button.link }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .button.text }}</a>
+            <div class="signature scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <img src="{{ .signature.image | absURL }}" alt="{{ .signature.alt }}" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,62 @@
+<header class="header">
+  <div class="header__builder">
+
+    {{ "<!-- logo -->" | safeHTML }}
+    <div class="logo-image">
+       <a href="{{ .Site.BaseURL }}">
+         {{ $header := .Site.Params.header }}
+         <img src="{{ $header.logo | absURL }}" alt="logo" />
+       </a>
+    </div>
+
+    {{ "<!-- menu button -->" | safeHTML }}
+    <a href="#" class="menu-btn full"><span></span></a>
+
+    {{ "<!-- navigation -->" | safeHTML }}
+    <div class="menu-full-overlay">
+
+      <div class="menu-full-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 offset-1">
+
+              {{ "<!-- navigation list -->" | safeHTML }}
+              <div class="menu-full">
+                <ul class="menu-full">
+                  {{ $currentPage := . }}
+                  {{ range .Site.Menus.main }}
+                  {{ $menuURL := .URL | absLangURL }}
+                  {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+                  {{ $active := eq $menuURL $pageURL }}
+                  <li class="menu-item{{ if .HasChildren }} menu-item-has-children has-children{{ end }}">
+                    <a class="splitting-text-anim-2" data-splitting="chars" href="{{ $.Site.BaseURL }}{{ .URL }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                    <ul class="sub-menu">
+                      {{ range .Children }}
+                      {{ $childURL := .URL | absLangURL }}
+                      {{ $active := eq $childURL $pageURL }}
+                      <li class="menu-item{{ if $active }} menu-current-item{{ end }}"><a class="splitting-text-anim-1" data-splitting="chars" href="{{ .URL }}">{{ .Name }}</a></li>
+                      {{ end }}
+                    </ul>
+                    {{ end }}
+                  </li>
+                  {{ end }}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ "<!-- social -->" | safeHTML }}
+      <div class="menu-social-links">
+        {{ range .Site.Params.social }}
+        <a href="{{ .url }}" target="blank" class="scrolla-element-anim-1" title="{{ .title }}">{{ .title }}</a>
+        {{ end }}
+      </div>
+
+    </div>
+
+  </div>
+</header>

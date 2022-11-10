@@ -1,0 +1,96 @@
+[all]
+other = "All"
+
+[readMore]
+other = "Read more"
+
+[seeDetails]
+other = "see details"
+
+[by]
+other = "By"
+
+[yourName]
+other = "Name"
+
+[enterYourName]
+other = "Enter your full name"
+
+[yourEmail]
+other = "Email Address"
+
+[enterYourEmail]
+other = "Enter your email address"
+
+[yourMessage]
+other = "Message"
+
+[enterYourMessage]
+other = "Enter your message here"
+
+[submit]
+other = "Submit"
+
+[getInTouch]
+other = "Get in touch"
+
+[latestPosts]
+other = "Latest Posts"
+
+[taxonomyPageList]
+other = "Latest Posts by"
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} mins read"
+
+[share]
+other = "Share"
+
+[shareOn]
+other = "Share on"
+
+[tags]
+other = "Tags"
+
+[comments]
+other = "Comments"
+
+[nextPost]
+other = "Next Post"
+
+[prevPost]
+other = "Previous Post"
+
+[nextProject]
+other = "Next Project"
+
+[prevProject]
+other = "Previous Project"
+
+[successMessage]
+other = "Thanks, your message is sent successfully."
+
+[developedBy]
+other = "Developed By"
+
+[category]
+other = "Category"
+
+[search]
+other = "Search"
+
+[searchFor]
+other = "Search for:"
+
+[categories]
+other = "Categories"
+
+[errorNum]
+other = "404"
+
+[errorTitle]
+other = "Whoops!"
+
+[errorText]
+other = "The page you’re looking for doesn’t exist or has been moved."

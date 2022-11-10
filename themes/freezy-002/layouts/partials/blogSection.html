@@ -1,0 +1,60 @@
+{{ $dateFormat := .Site.Params.dateFormat }}
+{{ with .Site.Data.home.blog }}
+{{ if .enable }}
+<section class="section section-bg" id="blog-section">
+	<div class="container">
+
+		{{ "<!-- heading -->" | safeHTML }}
+		<div class="m-titles">
+			<h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">{{ .title | markdownify }}</h2>
+		</div>
+
+		<div class="row row-custom">
+			<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 vertical-line">
+
+				{{ "<!-- description -->" | safeHTML }}
+				<div class="text scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ .text | safeHTML }}
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	{{ "<!-- blog list -->" | safeHTML }}
+	<div class="blog-items">
+		{{ range first 3 (where $.Site.RegularPages "Section" "blog") }}
+		<div class="archive-item">
+			<div class="image">
+				<a href="{{ .Permalink }}">
+					<img src="{{ .Params.featureImage | absURL }}" alt="{{ .Title }}" />
+				</a>
+			</div>
+			<div class="desc">
+				<div class="category scrolla-element-anim-1 scroll-animate" data-animate="active">
+					{{ with .Params.categories }}{{ delimit . " / "}}{{ end }}<br/><span>{{ .PublishDate.Format $dateFormat }}</span>
+				</div>
+				<h3 class="title scrolla-element-anim-1 scroll-animate" data-animate="active">
+					<a href="{{ .Permalink }}">{{ .Title }}</a>
+				</h3>
+				<div class="text scrolla-element-anim-1 scroll-animate" data-animate="active">
+					<p>{{ .Summary }} &#8230;</p>
+					<div class="readmore">
+						<a href="{{ .Permalink }}" class="lnk">{{ i18n "readMore" }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{ end }}
+	</div>
+
+	<div class="blog-more-link">
+		<a href="{{ .link }}" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .button }}</a>
+	</div>
+
+</section>
+{{ end }}
+{{ end }}

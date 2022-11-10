@@ -1,0 +1,48 @@
+{{ with .Site.Data.home.disp_slider }}
+{{ if .enable }}
+
+{{ "<!-- Disp Full Slider -->" | safeHTML }}
+<div class="section full-slider" data-dispimgpath="/images/clouds.jpg">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      {{ range .slides }}
+      <div class="swiper-slide">
+
+        <div class="slide"><img src="{{ .image | absURL }}" class="full-slide-item__image" alt="{{ .subtitle }}" /></div>
+
+        <div class="slide-titles bottom">
+          <div class="titles">
+            <div class="label splitting-text-anim-1" data-splitting>{{ .subtitle }}</div>
+            <div class="title">
+              <a href="{{ .link }}">
+                <span class="title-inner splitting-text-anim-2" data-splitting>{{ .title | safeHTML }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-btn">
+          <a href="{{ .link }}" data-splitting class="splitting-text-anim-1">{{ i18n "viewWork" }}</a>
+        </div>
+
+      </div>
+      {{ end }}
+
+    </div>
+
+    <div class="swiper-pagination scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+
+    <div class="swiper-buttons">
+      <div class="swiper-button-prev scene-nav scene-nav--prev scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+      <div class="swiper-button-next scene-nav scene-nav--next scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+    </div>
+
+  </div>
+
+  <div class="canvas full-slider-items__image"></div>
+
+</div>
+
+{{ end }}
+{{ end }}

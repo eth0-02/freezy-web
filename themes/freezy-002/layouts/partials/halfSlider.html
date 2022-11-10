@@ -1,0 +1,53 @@
+{{ with .Site.Data.home.half_slider }}
+{{ if .enable }}
+
+{{ "<!-- Half Slider -->" | safeHTML }}
+<div class="section half-slider" data-dispimgpath="/images/clouds.jpg">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      {{ range .slides }}
+      <div class="swiper-slide">
+
+        <!-- image -->
+        <div class="slide"><img src="{{ .image | absURL }}" class="half-slide-item__image" alt="{{ .subtitle }}" /></div>
+
+        <!-- slide titles -->
+        <div class="slide-titles">
+          <div class="titles">
+            <div class="label splitting-text-anim-1" data-splitting>{{ .subtitle }}</div>
+            <div class="title">
+              <a href="{{ .link }}"><span class="title-inner splitting-text-anim-2" data-splitting>{{ .title | safeHTML }}</span></a>
+            </div>
+            <div class="text scrolla-element-anim-1">
+              {{ .description | safeHTML }}
+            </div>
+          </div>
+          <div class="view-btn">
+            <a href="{{ .link }}" data-splitting class="splitting-text-anim-1">{{ i18n "viewWork" }}</a>
+          </div>
+        </div>
+
+      </div>
+      {{ end }}
+
+    </div>
+
+    <!-- pagination -->
+    <div class="swiper-pagination scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+
+    <!-- navigation -->
+    <div class="swiper-buttons">
+      <div class="swiper-button-prev scene-nav scene-nav--prev scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+      <div class="swiper-button-next scene-nav scene-nav--next scrolla-element-anim-1 scroll-animate" data-animate="active"></div>
+    </div>
+
+  </div>
+
+  <!-- slides -->
+  <div class="canvas half-slider-items__image"></div>
+
+</div>
+
+{{ end }}
+{{ end }}

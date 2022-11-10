@@ -1,0 +1,106 @@
+/*
+*	Ober - Personal Portfolio Template (HTML)
+*	Version: 1.0
+*	Author: bslthemes
+*	Author URL: http://themeforest.net/user/bslthemes
+*	Copyright © Ober by bslthemes. All Rights Reserved.
+*/
+
+/* SETTINGS VARIABLES FOR DARK UI
+	- Background Colors
+	- Colors
+*/
+
+/* Background Colors */
+$default_bg: #222a36;
+$second_bg: #181e27;
+
+/* Colors */
+$default_color: #fff;
+$white_color: #FFF;
+$dark_color: #000;
+$active_color: #ff8059;
+$error_color: red;
+
+/* SETTINGS VARIABLES FOR LIGHT UI
+	- Background Colors
+	- Colors
+*/
+
+/* Background Colors */
+$light_default_bg: #f7f5f2;
+$light_second_bg: #ebe7e0;
+
+/* Colors */
+$light_default_color: #1c2528;
+$light_white_color: #FFF;
+$light_dark_color: #000;
+$light_active_color: #68e0cf;
+$light_error_color: red;
+
+/* SETTINGS VARIABLES FOR TYPOGRAPHY
+	- Fonts
+	- Fonts Size
+	- Icons Size
+	- Line Height
+	- Mixins
+*/
+
+/* Fonts */
+$default_font: 'Rubik';
+$extra_font: 'Sorts Mill Goudy';
+
+/* Fonts Size */
+
+$default_size: 20px;
+
+$section_h1_size: 138px;
+$section_h2_size: 100px;
+$section_sub_size: 40px;
+$section_name_size: 24px;
+
+$btn_size: 18px;
+
+$menu_size: 120px;
+$menu_sub_size: 40px;
+
+$title_h1_size: 49px;
+$title_h3_size: 39px;
+$title_h4_size: 29px;
+$title_h5_size: 24px;
+$title_h6_size: 20px;
+
+/* Fonts Weight */
+$font_weight: 300;
+
+/* Line Height */
+$line_height: 1.5;
+
+/*Mixins*/
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-khtml-border-radius: $radius;
+}
+
+@mixin box-shadow($param) {
+	box-shadow: $param;
+	-moz-box-shadow: $param;
+	-webkit-box-shadow: $param;
+	-khtml-box-shadow: $param;
+}
+
+@mixin transition($param) {
+	transition: $param;
+	-moz-transition: $param;
+	-webkit-transition: $param;
+	-o-transition: $param;
+}
+
+@mixin transform($param) {
+	transform: $param;
+	-webkit-transform: $param;
+	-moz-transform: $param;
+	-o-transform: $param;
+}

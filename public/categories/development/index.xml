@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Aster - Creative Agency Portfolio Hugo Theme</title>
+    <link>https://bslthemes.com/categories/development/</link>
+    <description>Recent content in Development on Aster - Creative Agency Portfolio Hugo Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Jul 2020 12:49:27 +0600</lastBuildDate><atom:link href="https://bslthemes.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benjamin Franklins thoughts about new designers</title>
+      <link>https://bslthemes.com/blog/benjamin-franklins-thoughts-about-new-designers/</link>
+      <pubDate>Mon, 13 Jul 2020 12:49:27 +0600</pubDate>
+      
+      <guid>https://bslthemes.com/blog/benjamin-franklins-thoughts-about-new-designers/</guid>
+      <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
+    </item>
+    
+  </channel>
+</rss>

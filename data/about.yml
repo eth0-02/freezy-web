@@ -1,0 +1,151 @@
+# Sections content configuration file
+##
+### use navigation.yml file to re-order, delete or add section of each card
+### here you can find all content in all pre-build sections
+
+### Parallax [parallaxSection]
+parallax:
+  enable: 1
+  image: "/images/about2.jpg"
+
+### Description [ descriptionSection ]
+description:
+  enable: 1
+  title: "We are startup<br />digital agency"
+  column1: "
+    A Los Angeles based studio building handcrafted websites and brands for companies and all over the world. It is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives. Creativity is to discover a question that has never been asked. If one brings up an idiosyncratic questionl.
+  "
+  column2: "
+    The development of digital marketing is inseparable from technology development. One of the first key events happened in 1971, when Ray Tomlinson sent the first email, and his technology set the platform to allow people to send and receive files through different machines. However, the more recognizable period as being the start of Digital Marketing is 1990 as this was where the Archie search engine was created as an index for FTP sites.
+  "
+
+### Services [ servicesSection ]
+services:
+  enable: 1
+  title: "Our services"
+  items:
+    - title: "Marketing"
+      icon: "fas fa-chart-bar"
+      text: "Focused on creating, publishing, and distributing content for a targeted audience online."
+
+    - title: "Copywriting"
+      icon: "fas fa-copyright"
+      text: "Act or occupation of writing text for the purpose of advertising or other forms of marketing."
+
+    - title: "Web Design"
+      icon: "far fa-object-group"
+      text: "Design process relating to the front-end (client side) design of a website including writing."
+
+    - title: "Advertising"
+      icon: "fas fa-ad"
+      text: "Employs an openly sponsored, non-personal message to promote or sell a product, service."
+
+    - title: "Optimization"
+      icon: "fas fa-rocket"
+      text: "Improving the quality and quantity of website traffic to a website or a web page from search."
+
+    - title: "Support"
+      icon: "far fa-life-ring"
+      text: "Services to assist customers in making cost effective and correct use of a product."
+
+### List [ listSection ]
+list:
+  enable: 1
+  title: "Our vision"
+  items:
+    - num: "01."
+      text: "Search Engine Optimization"
+
+    - num: "02."
+      text: "Search Engine Marketing"
+
+    - num: "03."
+      text: "Website Strategy and Social Media Marketing"
+
+    - num: "04."
+      text: "Content Generation and Optimization"
+
+### Video [ videoSection ]
+video:
+  enable: 1
+  image: "/images/started-n7.jpg"
+  video_id: "Gu6z6kIukgg"
+
+### Team [ teamSection ]
+team:
+  enable: 1
+  title: "Meet the team"
+  items:
+    - name: "Natasha Singh"
+      subname: "Founder"
+      image: "/images/team5.jpg"
+
+    - name: "Robert Long"
+      subname: "Co-founder"
+      image: "/images/team1.jpg"
+
+    - name: "Viktoria Freeman"
+      subname: "Designer"
+      image: "/images/team2.jpg"
+
+### Testimonial [ testimonialSection ]
+testimonial:
+  enable: 1
+  title: "Our testimonials"
+  items:
+    - name: "John Smith"
+      subname: "Designer"
+      image: "/images/rev1.png"
+      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+
+    - name: "Natasha Singh"
+      subname: "Photographer"
+      image: "/images/rev3.png"
+      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+
+    - name: "Gray Woodman"
+      subname: "Bloger"
+      image: "/images/rev2.png"
+      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+
+    - name: "Robert Long"
+      subname: "Photographer"
+      image: "/images/rev4.png"
+      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+
+### Clients [ clientsSection ]
+clients:
+  enable: 1
+  items:
+    - title: "Company"
+      image: "/images/brand_logo_03_1.png"
+      link: ""
+
+    - title: "Company"
+      image: "/images/brand_logo_08_1.png"
+      link: ""
+
+    - title: "Company"
+      image: "/images/brand_logo_06_1.png"
+      link: ""
+
+    - title: "Company"
+      image: "/images/brand_logo_05_1.png"
+      link: ""
+
+### Cotacts [ contactSection ]
+contacts:
+  enable: 1
+  title: "Contact info"
+  items:
+    - title: "Phone:"
+      icon: "fas fa-phone-alt"
+      text: "+1 (800) 123 56 89"
+
+    - title: "E-mail:"
+      icon: "fas fa-at"
+      text: "aster@domain.com"
+
+    - title: "Location:"
+      icon: "fab fa-font-awesome-flag"
+      text: "Marollem St. 32, New York, USA."

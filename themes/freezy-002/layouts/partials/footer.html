@@ -1,0 +1,52 @@
+{{ $footer := .Site.Params.footer }}
+{{ $social := .Site.Params.social }}
+{{ with $footer }}
+
+{{ "<!-- Footer -->" | safeHTML }}
+<footer class="footer">
+	<div class="footer__builder">
+		<div class="container align-center">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+
+					<div class="h-titles">
+						<div class="h-subtitle scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .col1_title | safeHTML }}</div>
+						<div class="h-text scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .col1_text | safeHTML }}</div>
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+
+					<div class="h-titles">
+						<div class="h-subtitle scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .col2_title | safeHTML }}</div>
+					</div>
+
+					<div class="social-links footer-social-links">
+						{{ range $social }}
+						<a href="{{ .url }}" target="_blank" class="scrolla-element-anim-1 scroll-animate" data-animate="active" title="{{ .title }}">
+							<i aria-hidden="true" class="{{ .icon }}"></i>
+						</a>
+						{{ end }}
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+
+					<div class="h-titles">
+						<div class="h-subtitle scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .col3_title | safeHTML }}</div>
+						<div class="h-text scrolla-element-anim-1 scroll-animate" data-animate="active">
+							<p>{{ .col3_text | safeHTML }}</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="copyright-text scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .copyright }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+{{ end }}

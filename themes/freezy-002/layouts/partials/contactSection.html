@@ -1,0 +1,75 @@
+{{ $action := .Site.Params.formspreeURL }}
+
+<!-- Section Contacts Form -->
+<div class="section section-inner m-contacts-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+        <!-- titles -->
+        <div class="m-titles">
+          <div class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ i18n "getInTouch" }}</div>
+        </div>
+
+        <!-- contact form -->
+        <div class="contacts-form">
+          <form id="cform" action="{{ $action }}" method="post">
+            <div class="group">
+              <div class="value scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <input type="text" name="name" placeholder="{{ i18n "yourName" }}" />
+              </div>
+            </div>
+            <div class="group">
+              <div class="value scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <input type="text" name="email" placeholder="{{ i18n "yourEmail" }}" />
+              </div>
+            </div>
+            <div class="group full">
+              <div class="value scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <textarea name="message" placeholder="{{ i18n "yourMessage" }}"></textarea>
+              </div>
+            </div>
+            <div class="submit scrolla-element-anim-1 scroll-animate" data-animate="active">
+              <a href="#" class="btn" onclick="$('#cform').submit(); return false;">
+                {{ i18n "submit" }}
+              </a>
+            </div>
+          </form>
+          <div class="alert-success" id="formAlertSuccess" style="display: none;">
+            <p>{{ i18n "successMessage" }}</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+          {{ with .Site.Data.about.contacts }}
+          {{ if .enable }}
+
+          <!-- titles -->
+          <div class="m-titles">
+            <h2 class="m-title scrolla-element-anim-1 scroll-animate" data-animate="active">{{ .title }}</h2>
+          </div>
+
+          <!-- services -->
+          <div class="services-items row">
+
+            {{ range .items }}
+            <div class="services-col col-xs-12 col-sm-6 col-md-6 col-lg-4">
+              <div class="services-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <div class="icon">
+                  <i aria-hidden="true" class="{{ .icon }}"></i>
+                </div>
+                <div class="name">{{ .title }}</div>
+                <div class="text">{{ .text | safeHTML }}</div>
+              </div>
+            </div>
+            {{ end }}
+
+          </div>
+
+          {{ end }}
+          {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
