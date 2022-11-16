@@ -18,7 +18,7 @@ info:
     value: 2021
 
   - label: Website
-    value: bslthemes.com
+    value: freezyllc.com
 
 description1:
   enable: true

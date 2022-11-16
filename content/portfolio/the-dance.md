@@ -12,7 +12,7 @@ info:
 - label: Year
   value: "2018"
 - label: Website
-  value: bslthemes.com
+  value: freezyllc.com
 description1:
   enable: true
   title: Introduction
